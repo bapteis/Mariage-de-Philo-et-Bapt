@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mariage de Philomène & Baptiste - 11 juillet 2026</title>
+
+  <!-- Polices élégantes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #6b8b6e; /* vert sauge */
+      --accent-light: #e7eee8;
+      --bg: #f7f3ee;    /* beige clair */
+      --text: #333333;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      min-height: 100vh;
+      padding: 2rem 1.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: radial-gradient(circle at top left, #ffffff 0, #f7f3ee 45%, #e7eee8 100%);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav a {
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav a:hover {
+      border-color: var(--accent);
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: 4rem auto 2rem;
+      text-align: center;
+    }
+
+    .names {
+      font-family: 'Playfair Display', 'Times New Roman', serif;
+      font-size: clamp(2.8rem, 6vw, 3.8rem);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .ampersand {
+      font-family: 'Playfair Display', 'Times New Roman', serif;
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .date-location {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero-divider {
+      width: 80px;
+      height: 1px;
+      background-color: var(--accent);
+      margin: 2rem auto;
+    }
+
+    .hero-text {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 0.98rem;
+    }
+
+    .hero-meta {
+      margin-top: 2.5rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .hero-meta span {
+      display: inline-block;
+      margin: 0 0.6rem;
+    }
+
+    main {
+      padding: 0 1.5rem 3rem;
+    }
+
+    .section {
+      max-width: 950px;
+      margin: 0 auto 3rem;
+      padding: 2.5rem 1.8rem;
+      background-color: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', 'Times New Roman', serif;
+      font-size: 1.4rem;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.2rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 800px) {
+      .two-columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card-soft {
+      padding: 1.3rem 1.4rem;
+      border-radius: 14px;
+      background-color: var(--accent-light);
+      font-size: 0.95rem;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      background-color: rgba(107,139,110,0.08);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .schedule {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .schedule li {
+      display: grid;
+      grid-template-columns: 85px minmax(0, 1fr);
+      gap: 1rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed rgba(0,0,0,0.06);
+    }
+
+    .schedule li:last-child {
+      border-bottom: none;
+    }
+
+    .time {
+      font-weight: 500;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.6fr);
+      gap: 1rem;
+    }
+
+    .photo-placeholder {
+      border-radius: 18px;
+      background-color: #e1e6e1;
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #5f6d5f;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 800px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .list-simple {
+      padding-left: 1.1rem;
+      margin: 0.5rem 0 0;
+      font-size: 0.95rem;
+    }
+
+    .list-simple li {
+      margin-bottom: 0.35rem;
+    }
+
+    .gift-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 800px) {
+      .gift-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .gift-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 0.95rem;
+    }
+
+    .gift-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .iban-block {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .iban {
+      display: inline-block;
+      margin-top: 0.25rem;
+      padding: 0.5rem 0.7rem;
+      border-radius: 8px;
+      background-color: rgba(0,0,0,0.03);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.85rem;
+    }
+
+    footer {
+      padding: 2rem 1.5rem 3rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #666666;
+    }
+
+    .back-to-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+    }
+
+    .back-to-top span {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header id="top">
+    <nav class="nav">
+      <a href="#infos">Le week-end</a>
+      <a href="#lieu">Lieux & Accès</a>
+      <a href="#hebergement">Hébergements</a>
+      <a href="#cadeaux">Liste de cadeaux</a>
+      <a href="#brunch">Brunch du dimanche</a>
+    </nav>
+
+    <div class="hero">
+      <div class="names">Philomène <span class="ampersand">&</span> Baptiste</div>
+      <div class="hero-divider"></div>
+      <p class="hero-text">
+        Nous avons hâte de célébrer notre mariage entourés de ceux que nous aimons.
+        Vous trouverez ici toutes les informations pratiques pour le week-end au
+        Château du Passage, en Isère.
+      </p>
+      <div class="hero-meta">
+        <span>Samedi 11 juillet 2026</span>
+        ·
+        <span>Château du Passage, Isère</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Programme -->
+    <section id="infos" class="section">
+      <div class="section-header">
+        <div class="section-kicker">Programme</div>
+        <h2 class="section-title">Le week-end de mariage</h2>
+      </div>
+
+      <div class="two-columns">
+        <div>
+          <p>
+            Le mariage religieux sera célébré à Saint-André-le-Gaz, puis nous nous retrouverons
+            au Château du Passage pour le reste de la journée et le brunch du lendemain.
+          </p>
+
+          <ul class="schedule">
+            <li>
+              <div class="time">15h00</div>
+              <div>
+                Cérémonie à l'église de Saint-André-le-Gaz
+              </div>
+            </li>
+            <li>
+              <div class="time">16h30</div>
+              <div>
+                Petit goûter et rafraîchissements
+              </div>
+            </li>
+            <li>
+              <div class="time">17h30</div>
+              <div>
+                Début du cocktail au Château du Passage
+              </div>
+            </li>
+            <li>
+              <div class="time">19h30</div>
+              <div>
+                Début du repas
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-soft">
+          <span class="tag">Dimanche</span>
+          <p style="margin-top: 0.8rem;">
+            Le lendemain, nous serons ravis de vous retrouver pour un brunch
+            convivial au château à partir de 11h00.
+          </p>
+          <p style="margin-bottom: 0;">
+            N'hésitez pas à nous indiquer votre présence au brunch lorsque vous
+            répondrez à l'invitation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lieux -->
+    <section id="lieu" class="section">
+      <div class="section-header">
+        <div class="section-kicker">Lieux</div>
+        <h2 class="section-title">Château & église</h2>
+      </div>
+
+      <div class="gallery">
+        <div class="photo-placeholder">
+          Ici, vous pourrez insérer une photo du Château du Passage
+          (par exemple un fichier <strong>chateau.jpg</strong> dans le même dossier que cette page).
+        </div>
+        <div class="photo-placeholder">
+          Et ici, une photo de l'église de Saint-André-le-Gaz
+          (par exemple <strong>eglise.jpg</strong>), ou un plan d'accès.
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem;" class="two-columns">
+        <div>
+          <p><strong>
+            Église de Saint-André-le-Gaz</strong><br>
+            Adresse de l'église à compléter ici.
+          </p>
+          <ul class="list-simple">
+            <li>Arriver 10 à 15 minutes avant le début de la cérémonie.</li>
+            <li>Vous pourrez ensuite rejoindre le Château du Passage en voiture (trajet à préciser).</li>
+          </ul>
+        </div>
+        <div>
+          <p><strong>
+            Château du Passage</strong><br>
+            Adresse du château à compléter ici.
+          </p>
+          <ul class="list-simple">
+            <li>Parking disponible sur place (ou informations à adapter).</li>
+            <li>Vous pourrez laisser vos affaires pour le brunch du dimanche.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hébergements -->
+    <section id="hebergement" class="section">
+      <div class="section-header">
+        <div class="section-kicker">Pratique</div>
+        <h2 class="section-title">Hébergements & alentours</h2>
+      </div>
+
+      <div class="two-columns">
+        <div>
+          <p>
+            Quelques idées de gîtes, hôtels et chambres d'hôtes se trouvent à proximité
+            du château et de Saint-André-le-Gaz. Vous pourrez compléter cette section avec
+            vos recommandations préférées.
+          </p>
+          <ul class="list-simple">
+            <li>Gîtes à proximité du château.</li>
+            <li>Hôtels dans les environs (Bourgoin-Jallieu, La Tour-du-Pin, etc.).</li>
+            <li>Chambres d'hôtes et logements type Airbnb.</li>
+          </ul>
+        </div>
+        <div class="card-soft">
+          <span class="tag">Suggestion</span>
+          <p style="margin-top: 0.8rem;">
+            N'hésitez pas à vous regrouper pour les hébergements, ou à organiser du covoiturage
+            pour les trajets entre l'église, le château et vos lieux de séjour.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cadeaux -->
+    <section id="cadeaux" class="section">
+      <div class="section-header">
+        <div class="section-kicker">Cadeaux</div>
+        <h2 class="section-title">Nos idées de cadeaux</h2>
+      </div>
+
+      <div class="gift-grid">
+        <div>
+          <p>
+            Votre présence à nos côtés est déjà le plus beau des cadeaux.
+            Si vous souhaitez nous faire une attention supplémentaire, voici quelques idées
+            vers lesquelles vous pouvez contribuer.
+          </p>
+          <ul class="gift-list">
+            <li>Un week-end à la mer – environ 200 à 400 € (participation libre).</li>
+            <li>Un bel objet pour la maison – environ 80 à 150 €.</li>
+            <li>Une expérience à deux (concert, spectacle, etc.) – environ 60 à 120 €.</li>
+            <li>Une participation à notre voyage – montant au choix.</li>
+          </ul>
+        </div>
+        <div class="card-soft">
+          <span class="tag">Participer</span>
+          <p style="margin-top: 0.8rem;">
+            Pour contribuer, vous pouvez effectuer un virement bancaire ou utiliser
+            une application de paiement de type Lydia / Revolut / Wero.
+          </p>
+          <div class="iban-block">
+            <strong>Virement bancaire</strong><br>
+            <span class="iban">IBAN à indiquer ici</span>
+          </div>
+          <p style="margin-top: 0.9rem; margin-bottom: 0; font-size: 0.9rem;">
+            Pensez à indiquer votre nom en référence du virement pour que nous puissions
+            vous remercier.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brunch -->
+    <section id="brunch" class="section">
+      <div class="section-header">
+        <div class="section-kicker">Dimanche</div>
+        <h2 class="section-title">Brunch au château</h2>
+      </div>
+
+      <p>
+        Nous serons très heureux de prolonger les festivités avec vous lors d'un brunch
+        au Château du Passage le dimanche à partir de 11h00. Vous pourrez repartir dans
+        l'après-midi en toute tranquillité.
+      </p>
+      <p>
+        Si vous avez des contraintes particulières (régime alimentaire, horaires de départ,
+        etc.), n'hésitez pas à nous le signaler.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="back-to-top" href="#top" aria-label="Revenir en haut de page">
+      <span>↑</span> Haut de page
+    </a>
+    <div>
+      Philomène &amp; Baptiste — 11 juillet 2026
+    </div>
+  </footer>
+</body>
+  </html>
