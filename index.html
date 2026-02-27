@@ -3,521 +3,969 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mariage de Philomène & Baptiste - 11 juillet 2026</title>
+  <title>Mariage de Philomène &amp; Baptiste – 11 juillet 2026</title>
 
-  <!-- Polices élégantes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
+    @font-face {
+      font-family: 'Day Roman';
+      src: url('day_roman/DAYROM__.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Day Roman';
+      src: url('day_roman/DAYROM_X.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
+  <style>
+    /* ── VARIABLES – couleurs du faire-part ── */
     :root {
-      --accent: #6b8b6e; /* vert sauge */
-      --accent-light: #e7eee8;
-      --bg: #f7f3ee;    /* beige clair */
-      --text: #333333;
+      --orange:       #C84B2F;   /* orange-rouge principal du faire-part */
+      --orange-dark:  #A03522;
+      --orange-light: #F9EDE9;   /* fond des cartes */
+      --orange-mid:   #E8956A;
+      --bg:           #FFFDF9;   /* blanc chaud */
+      --text:         #2C2020;
+      --text-light:   #6B5050;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
-      margin: 0;
-      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: 'Montserrat', system-ui, sans-serif;
       color: var(--text);
-      background-color: var(--bg);
-      line-height: 1.6;
+      background: var(--bg);
+      line-height: 1.7;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+    a { color: var(--orange); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    header {
-      min-height: 100vh;
-      padding: 2rem 1.5rem 3rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: radial-gradient(circle at top left, #ffffff 0, #f7f3ee 45%, #e7eee8 100%);
-    }
-
+    /* ────────────────────────────────────────────
+       NAVIGATION
+    ──────────────────────────────────────────── */
     .nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(255,253,249,0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(200,75,47,0.13);
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
       flex-wrap: wrap;
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      gap: 0.15rem 1.2rem;
+      padding: 0.7rem 1.5rem;
     }
 
     .nav a {
-      padding-bottom: 0.2rem;
-      border-bottom: 1px solid transparent;
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text);
+      padding-bottom: 0.15rem;
+      border-bottom: 1.5px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
     }
 
     .nav a:hover {
-      border-color: var(--accent);
+      color: var(--orange);
+      border-color: var(--orange);
+      text-decoration: none;
     }
 
-    .hero {
-      max-width: 900px;
-      margin: 4rem auto 2rem;
+    /* ────────────────────────────────────────────
+       HERO
+    ──────────────────────────────────────────── */
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 4rem 1.5rem 5rem;
+      background:
+        radial-gradient(ellipse at 65% 5%, #fce5db 0%, transparent 55%),
+        radial-gradient(ellipse at 30% 90%, #fdf0e8 0%, transparent 50%),
+        var(--bg);
+    }
+
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1.4rem;
     }
 
     .names {
-      font-family: 'Playfair Display', 'Times New Roman', serif;
-      font-size: clamp(2.8rem, 6vw, 3.8rem);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-family: 'Day Roman', 'Times New Roman', serif;
+      font-size: clamp(3rem, 9vw, 6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: 0.05em;
     }
 
-    .ampersand {
-      font-family: 'Playfair Display', 'Times New Roman', serif;
+    .names .amp {
       font-style: italic;
-      color: var(--accent);
-    }
-
-    .date-location {
-      margin-top: 1rem;
-      font-size: 0.95rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
+      color: var(--orange);
     }
 
     .hero-divider {
-      width: 80px;
-      height: 1px;
-      background-color: var(--accent);
-      margin: 2rem auto;
+      width: 70px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--orange), transparent);
+      margin: 1.8rem auto;
+    }
+
+    .hero-date {
+      font-family: 'Day Roman', 'Times New Roman', serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 3vw, 1.7rem);
+      color: var(--orange);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-location {
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-light);
     }
 
     .hero-text {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 0.98rem;
+      max-width: 540px;
+      margin: 1.8rem auto 0;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.8;
     }
 
-    .hero-meta {
-      margin-top: 2.5rem;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    .hero-meta span {
-      display: inline-block;
-      margin: 0 0.6rem;
-    }
-
-    main {
-      padding: 0 1.5rem 3rem;
-    }
+    /* ────────────────────────────────────────────
+       SECTIONS COMMUNES
+    ──────────────────────────────────────────── */
+    main { padding: 0 1.2rem 5rem; }
 
     .section {
-      max-width: 950px;
-      margin: 0 auto 3rem;
-      padding: 2.5rem 1.8rem;
-      background-color: #ffffff;
-      border-radius: 18px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.04);
-      border: 1px solid rgba(0,0,0,0.03);
+      max-width: 980px;
+      margin: 0 auto 2.5rem;
+      padding: 2.5rem 2rem;
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 20px 55px rgba(200,75,47,0.06);
+      border: 1px solid rgba(200,75,47,0.07);
     }
 
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 0.8rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .section-kicker {
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
+    .kicker {
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--orange);
+      margin-bottom: 0.4rem;
     }
 
     .section-title {
-      font-family: 'Playfair Display', 'Times New Roman', serif;
-      font-size: 1.4rem;
+      font-family: 'Day Roman', 'Times New Roman', serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 1.6rem;
     }
 
-    .two-columns {
+    /* ────────────────────────────────────────────
+       GRILLES
+    ──────────────────────────────────────────── */
+    .two-col {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 2.2rem;
-      align-items: flex-start;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
     }
 
-    @media (max-width: 800px) {
-      .two-columns {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 700px) {
+      .two-col { grid-template-columns: 1fr; }
     }
 
-    .card-soft {
-      padding: 1.3rem 1.4rem;
+    /* ────────────────────────────────────────────
+       CARTE DOUCE
+    ──────────────────────────────────────────── */
+    .card {
+      padding: 1.4rem 1.5rem;
       border-radius: 14px;
-      background-color: var(--accent-light);
-      font-size: 0.95rem;
+      background: var(--orange-light);
+      font-size: 0.93rem;
+      line-height: 1.7;
     }
 
     .tag {
       display: inline-block;
-      padding: 0.18rem 0.55rem;
+      padding: 0.18rem 0.65rem;
       border-radius: 999px;
-      background-color: rgba(107,139,110,0.08);
-      font-size: 0.72rem;
-      letter-spacing: 0.16em;
+      background: rgba(200,75,47,0.12);
+      color: var(--orange);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
+      margin-bottom: 0.8rem;
     }
 
+    /* ────────────────────────────────────────────
+       PROGRAMME
+    ──────────────────────────────────────────── */
     .schedule {
+      list-style: none;
       margin: 0;
       padding: 0;
-      list-style: none;
-      font-size: 0.95rem;
     }
 
     .schedule li {
       display: grid;
-      grid-template-columns: 85px minmax(0, 1fr);
+      grid-template-columns: 72px 1fr;
       gap: 1rem;
-      padding: 0.5rem 0;
-      border-bottom: 1px dashed rgba(0,0,0,0.06);
+      padding: 0.65rem 0;
+      border-bottom: 1px dashed rgba(200,75,47,0.16);
+      font-size: 0.93rem;
     }
 
-    .schedule li:last-child {
-      border-bottom: none;
-    }
+    .schedule li:last-child { border-bottom: none; }
 
     .time {
-      font-weight: 500;
+      font-weight: 600;
+      color: var(--orange);
+      letter-spacing: 0.04em;
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.6fr);
-      gap: 1rem;
+    /* ────────────────────────────────────────────
+       ÉGLISE / PHOTO
+    ──────────────────────────────────────────── */
+    .church-img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block;
+      margin-bottom: 1.5rem;
     }
 
-    .photo-placeholder {
-      border-radius: 18px;
-      background-color: #e1e6e1;
-      min-height: 180px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #5f6d5f;
-      font-size: 0.9rem;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    @media (max-width: 800px) {
-      .gallery {
-        grid-template-columns: 1fr;
-      }
+    .address-block {
+      padding: 1rem 1.3rem;
+      border-left: 3px solid var(--orange);
+      background: var(--orange-light);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.93rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
     }
 
     .list-simple {
-      padding-left: 1.1rem;
-      margin: 0.5rem 0 0;
-      font-size: 0.95rem;
+      padding-left: 1.3rem;
+      font-size: 0.93rem;
+      margin-top: 0.5rem;
     }
 
-    .list-simple li {
-      margin-bottom: 0.35rem;
-    }
+    .list-simple li { margin-bottom: 0.4rem; }
 
+    /* ────────────────────────────────────────────
+       CADEAUX – GRILLE
+    ──────────────────────────────────────────── */
     .gift-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.8rem;
     }
 
-    @media (max-width: 800px) {
-      .gift-grid {
-        grid-template-columns: 1fr;
-      }
+    .gift-card {
+      border-radius: 16px;
+      border: 1.5px solid rgba(200,75,47,0.1);
+      overflow: hidden;
+      background: #fff;
+      transition: transform 0.22s, box-shadow 0.22s;
     }
 
-    .gift-list {
+    .gift-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 36px rgba(200,75,47,0.13);
+    }
+
+    .gift-emoji {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: var(--orange-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.2rem;
+    }
+
+    .gift-body {
+      padding: 0.85rem 1rem;
+    }
+
+    .gift-body strong {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+      color: var(--text);
+    }
+
+    .gift-body p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.5;
       margin: 0;
-      padding-left: 1.1rem;
-      font-size: 0.95rem;
     }
 
-    .gift-list li {
+    /* ────────────────────────────────────────────
+       PAIEMENT
+    ──────────────────────────────────────────── */
+    .payment-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.6rem;
+    }
+
+    @media (max-width: 600px) {
+      .payment-grid { grid-template-columns: 1fr; }
+    }
+
+    .pay-option {
+      padding: 1.1rem 1.3rem;
+      border-radius: 14px;
+      border: 1.5px solid rgba(200,75,47,0.13);
+      background: #fff;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .pay-icon {
+      font-size: 1.8rem;
       margin-bottom: 0.4rem;
     }
 
-    .iban-block {
-      margin-top: 1rem;
-      font-size: 0.9rem;
-    }
-
-    .iban {
-      display: inline-block;
-      margin-top: 0.25rem;
-      padding: 0.5rem 0.7rem;
-      border-radius: 8px;
-      background-color: rgba(0,0,0,0.03);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 0.85rem;
-    }
-
-    footer {
-      padding: 2rem 1.5rem 3rem;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #666666;
-    }
-
-    .back-to-top {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.16em;
+    .pay-option strong {
+      display: block;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.4rem;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.85rem;
+      padding: 0.15rem 0.4rem;
+      background: rgba(200,75,47,0.07);
+      border-radius: 4px;
+      word-break: break-all;
+    }
+
+    /* ────────────────────────────────────────────
+       SECTION MUSIQUE
+    ──────────────────────────────────────────── */
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 1.2rem;
+    }
+
+    @media (max-width: 750px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
+
+    .music-block {
+      padding: 1.6rem;
+      border-radius: 16px;
+      background: var(--orange-light);
+    }
+
+    .music-block h3 {
+      font-family: 'Day Roman', 'Times New Roman', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .music-block > p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 1.2rem;
+      line-height: 1.7;
+    }
+
+    /* ────────────────────────────────────────────
+       FORMULAIRES
+    ──────────────────────────────────────────── */
+    .field {
       margin-bottom: 0.9rem;
     }
 
-    .back-to-top span {
+    .field label {
+      display: block;
+      font-size: 0.73rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 0.3rem;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 0.6rem 0.9rem;
+      border: 1.5px solid rgba(200,75,47,0.22);
+      border-radius: 9px;
+      font-family: 'Montserrat', sans-serif;
       font-size: 0.9rem;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--orange);
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 75px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.8rem;
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn:hover {
+      background: var(--orange-dark);
+      transform: translateY(-1px);
+    }
+
+    .form-ok {
+      display: none;
+      margin-top: 0.9rem;
+      padding: 0.75rem 1rem;
+      background: #e6f4ea;
+      border-radius: 9px;
+      color: #2d6a4f;
+      font-size: 0.88rem;
+    }
+
+    .spotify-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--orange);
+    }
+
+    /* ────────────────────────────────────────────
+       FOOTER
+    ──────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem 3.5rem;
+      font-size: 0.82rem;
+      color: var(--text-light);
+    }
+
+    .footer-names {
+      font-family: 'Day Roman', 'Times New Roman', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      color: var(--orange);
+      margin-bottom: 0.4rem;
+    }
+
+    .back-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ────────────────────────────────────────────
+       RESPONSIVE MOBILE
+    ──────────────────────────────────────────── */
+    @media (max-width: 500px) {
+      .section { padding: 1.8rem 1.2rem; }
+      .gift-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
-  <header id="top">
-    <nav class="nav">
-      <a href="#infos">Le week-end</a>
-      <a href="#lieu">Lieux & Accès</a>
-      <a href="#hebergement">Hébergements</a>
-      <a href="#cadeaux">Liste de cadeaux</a>
-      <a href="#brunch">Brunch du dimanche</a>
-    </nav>
 
-    <div class="hero">
-      <div class="names">Philomène <span class="ampersand">&</span> Baptiste</div>
-      <div class="hero-divider"></div>
-      <p class="hero-text">
-        Nous avons hâte de célébrer notre mariage entourés de ceux que nous aimons.
-        Vous trouverez ici toutes les informations pratiques pour le week-end au
-        Château du Passage, en Isère.
-      </p>
-      <div class="hero-meta">
-        <span>Samedi 11 juillet 2026</span>
-        ·
-        <span>Château du Passage, Isère</span>
-      </div>
-    </div>
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav" id="top">
+    <a href="#infos">Le week-end</a>
+    <a href="#lieu">Lieu &amp; Accès</a>
+    <a href="#hebergement">Hébergements</a>
+    <a href="#cadeaux">Liste de cadeaux</a>
+    <a href="#musique">Musique</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <header>
+    <div class="hero-eyebrow">Samedi 11 juillet 2026</div>
+    <h1 class="names">Philomène <span class="amp">&amp;</span> Baptiste</h1>
+    <div class="hero-divider"></div>
+    <div class="hero-date">11 juillet 2026</div>
+    <div class="hero-location">Saint-André-le-Gaz · Isère</div>
+    <p class="hero-text">
+      Entourés de nos familles et de ceux que nous aimons, nous avons la joie
+      de vous convier à notre mariage. Vous trouverez ici toutes les informations
+      pratiques pour ce beau week-end.
+    </p>
   </header>
 
   <main>
-    <!-- Programme -->
+
+    <!-- ──────────────────────────────────────────
+         PROGRAMME
+    ────────────────────────────────────────── -->
     <section id="infos" class="section">
-      <div class="section-header">
-        <div class="section-kicker">Programme</div>
-        <h2 class="section-title">Le week-end de mariage</h2>
-      </div>
+      <div class="kicker">Programme</div>
+      <h2 class="section-title">Le samedi 11 juillet 2026</h2>
 
-      <div class="two-columns">
+      <div class="two-col">
         <div>
-          <p>
-            Le mariage religieux sera célébré à Saint-André-le-Gaz, puis nous nous retrouverons
-            au Château du Passage pour le reste de la journée et le brunch du lendemain.
+          <p style="font-size:0.95rem; margin-bottom:1.2rem;">
+            La cérémonie religieuse sera célébrée par <strong>Loïc Biot</strong>
+            en l'église de Saint-André-le-Gaz. La soirée se poursuit ensuite
+            dans la joie !
           </p>
-
           <ul class="schedule">
             <li>
               <div class="time">15h00</div>
-              <div>
-                Cérémonie à l'église de Saint-André-le-Gaz
-              </div>
+              <div>Début de la cérémonie religieuse à l'église de Saint-André-le-Gaz</div>
             </li>
             <li>
               <div class="time">16h30</div>
-              <div>
-                Petit goûter et rafraîchissements
-              </div>
+              <div>Petit goûter &amp; rafraîchissements</div>
             </li>
             <li>
               <div class="time">17h30</div>
-              <div>
-                Début du cocktail au Château du Passage
-              </div>
+              <div>Cocktail</div>
             </li>
             <li>
               <div class="time">19h30</div>
-              <div>
-                Début du repas
-              </div>
+              <div>Repas &amp; soirée dansante</div>
             </li>
           </ul>
         </div>
 
-        <div class="card-soft">
-          <span class="tag">Dimanche</span>
-          <p style="margin-top: 0.8rem;">
-            Le lendemain, nous serons ravis de vous retrouver pour un brunch
-            convivial au château à partir de 11h00.
+        <div class="card">
+          <div class="tag">Bon à savoir</div>
+          <p style="margin-top:0;">
+            La cérémonie débutera à <strong>15h précises</strong>.
+            Pensez à arriver 10 à 15 minutes en avance pour trouver
+            une place confortablement dans l'église.
           </p>
-          <p style="margin-bottom: 0;">
-            N'hésitez pas à nous indiquer votre présence au brunch lorsque vous
-            répondrez à l'invitation.
+          <p style="margin-bottom:0;">
+            Pour toute question logistique, contactez-nous à
+            <a href="mailto:baptiste.eisele@tutanota.com">baptiste.eisele@tutanota.com</a>
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Lieux -->
+    <!-- ──────────────────────────────────────────
+         LIEU
+    ────────────────────────────────────────── -->
     <section id="lieu" class="section">
-      <div class="section-header">
-        <div class="section-kicker">Lieux</div>
-        <h2 class="section-title">Château & église</h2>
+      <div class="kicker">Lieu</div>
+      <h2 class="section-title">L'église de Saint-André-le-Gaz</h2>
+
+      <img src="eglise.jpg" alt="Église de Saint-André-le-Gaz" class="church-img">
+
+      <div class="address-block">
+        <strong>📍 Adresse</strong><br>
+        9 Pl. de l'Église, 38490 Saint-André-le-Gaz<br>
+        <a href="https://www.google.com/maps/search/9+Place+de+l'Église+38490+Saint-André-le-Gaz"
+           target="_blank" rel="noopener"
+           style="font-size:0.88rem; margin-top:0.3rem; display:inline-block;">
+          → Ouvrir dans Google Maps
+        </a>
       </div>
 
-      <div class="gallery">
-        <div class="photo-placeholder">
-          Ici, vous pourrez insérer une photo du Château du Passage
-          (par exemple un fichier <strong>chateau.jpg</strong> dans le même dossier que cette page).
-        </div>
-        <div class="photo-placeholder">
-          Et ici, une photo de l'église de Saint-André-le-Gaz
-          (par exemple <strong>eglise.jpg</strong>), ou un plan d'accès.
-        </div>
-      </div>
-
-      <div style="margin-top: 2rem;" class="two-columns">
+      <div class="two-col">
         <div>
-          <p><strong>
-            Église de Saint-André-le-Gaz</strong><br>
-            Adresse de l'église à compléter ici.
+          <p style="margin-top:0; font-size:0.94rem;">
+            L'église se trouve au cœur du village de Saint-André-le-Gaz.
+            Des places de stationnement sont disponibles aux alentours de la place de l'église.
           </p>
           <ul class="list-simple">
             <li>Arriver 10 à 15 minutes avant le début de la cérémonie.</li>
-            <li>Vous pourrez ensuite rejoindre le Château du Passage en voiture (trajet à préciser).</li>
+            <li>La cérémonie est célébrée par le Père Loïc Biot.</li>
           </ul>
         </div>
-        <div>
-          <p><strong>
-            Château du Passage</strong><br>
-            Adresse du château à compléter ici.
-          </p>
-          <ul class="list-simple">
-            <li>Parking disponible sur place (ou informations à adapter).</li>
-            <li>Vous pourrez laisser vos affaires pour le brunch du dimanche.</li>
+
+        <div class="card">
+          <div class="tag">Accès depuis…</div>
+          <ul class="list-simple" style="padding-left:1rem; margin-top:0.2rem;">
+            <li><strong>Lyon</strong> : ~55 min (A43 dir. Chambéry)</li>
+            <li><strong>Grenoble</strong> : ~50 min (A48 dir. Lyon)</li>
+            <li><strong>Chambéry</strong> : ~35 min (A43 dir. Lyon)</li>
+            <li><strong>Bourg-en-Bresse</strong> : ~45 min</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Hébergements -->
+    <!-- ──────────────────────────────────────────
+         HÉBERGEMENTS
+    ────────────────────────────────────────── -->
     <section id="hebergement" class="section">
-      <div class="section-header">
-        <div class="section-kicker">Pratique</div>
-        <h2 class="section-title">Hébergements & alentours</h2>
-      </div>
+      <div class="kicker">Pratique</div>
+      <h2 class="section-title">Hébergements &amp; covoiturage</h2>
 
-      <div class="two-columns">
+      <div class="two-col">
         <div>
-          <p>
-            Quelques idées de gîtes, hôtels et chambres d'hôtes se trouvent à proximité
-            du château et de Saint-André-le-Gaz. Vous pourrez compléter cette section avec
-            vos recommandations préférées.
+          <p style="margin-top:0; font-size:0.94rem;">
+            De nombreux hébergements se trouvent à proximité de Saint-André-le-Gaz.
+            Voici quelques idées pour organiser votre séjour.
           </p>
           <ul class="list-simple">
-            <li>Gîtes à proximité du château.</li>
-            <li>Hôtels dans les environs (Bourgoin-Jallieu, La Tour-du-Pin, etc.).</li>
-            <li>Chambres d'hôtes et logements type Airbnb.</li>
+            <li>Gîtes &amp; chambres d'hôtes à Saint-André-le-Gaz et alentours.</li>
+            <li>Hôtels à Bourgoin-Jallieu (~15 min), La Tour-du-Pin (~10 min).</li>
+            <li>Logements Airbnb dans tout le secteur de l'Isle Crémieu.</li>
           </ul>
         </div>
-        <div class="card-soft">
-          <span class="tag">Suggestion</span>
-          <p style="margin-top: 0.8rem;">
-            N'hésitez pas à vous regrouper pour les hébergements, ou à organiser du covoiturage
-            pour les trajets entre l'église, le château et vos lieux de séjour.
+
+        <div class="card">
+          <div class="tag">Covoiturage</div>
+          <p style="margin-top:0; font-size:0.92rem;">
+            N'hésitez pas à vous regrouper pour les déplacements !
+            Organisez votre covoiturage entre invités — nous vous partagerons
+            bientôt un groupe de coordination.
+          </p>
+          <p style="margin-bottom:0; font-size:0.92rem;">
+            Pour toute question :
+            <a href="mailto:baptiste.eisele@tutanota.com">baptiste.eisele@tutanota.com</a>
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Cadeaux -->
+    <!-- ──────────────────────────────────────────
+         LISTE DE CADEAUX
+    ────────────────────────────────────────── -->
     <section id="cadeaux" class="section">
-      <div class="section-header">
-        <div class="section-kicker">Cadeaux</div>
-        <h2 class="section-title">Nos idées de cadeaux</h2>
-      </div>
+      <div class="kicker">Liste de mariage</div>
+      <h2 class="section-title">Idées de cadeaux</h2>
 
+      <p style="font-size:0.95rem; max-width:680px; color:var(--text-light);">
+        Votre présence à nos côtés est déjà le plus beau des cadeaux.
+        Si vous souhaitez nous faire une attention supplémentaire,
+        voici ce qui nous ferait vraiment plaisir.
+      </p>
+
+      <!-- Grille cadeaux -->
       <div class="gift-grid">
-        <div>
-          <p>
-            Votre présence à nos côtés est déjà le plus beau des cadeaux.
-            Si vous souhaitez nous faire une attention supplémentaire, voici quelques idées
-            vers lesquelles vous pouvez contribuer.
-          </p>
-          <ul class="gift-list">
-            <li>Un week-end à la mer – environ 200 à 400 € (participation libre).</li>
-            <li>Un bel objet pour la maison – environ 80 à 150 €.</li>
-            <li>Une expérience à deux (concert, spectacle, etc.) – environ 60 à 120 €.</li>
-            <li>Une participation à notre voyage – montant au choix.</li>
-          </ul>
-        </div>
-        <div class="card-soft">
-          <span class="tag">Participer</span>
-          <p style="margin-top: 0.8rem;">
-            Pour contribuer, vous pouvez effectuer un virement bancaire ou utiliser
-            une application de paiement de type Lydia / Revolut / Wero.
-          </p>
-          <div class="iban-block">
-            <strong>Virement bancaire</strong><br>
-            <span class="iban">IBAN à indiquer ici</span>
+
+        <div class="gift-card">
+          <div class="gift-emoji">🛋️</div>
+          <div class="gift-body">
+            <strong>Canapé-lit</strong>
+            <p>Pour accueillir nos proches avec confort.</p>
           </div>
-          <p style="margin-top: 0.9rem; margin-bottom: 0; font-size: 0.9rem;">
-            Pensez à indiquer votre nom en référence du virement pour que nous puissions
-            vous remercier.
+        </div>
+
+        <div class="gift-card">
+          <div class="gift-emoji">🛏️</div>
+          <div class="gift-body">
+            <strong>Lit 180 cm</strong>
+            <p>Notre futur grand lit pour bien dormir à deux !</p>
+          </div>
+        </div>
+
+        <div class="gift-card">
+          <div class="gift-emoji">🍽️</div>
+          <div class="gift-body">
+            <strong>Assiettes en céramique</strong>
+            <p>De belles assiettes artisanales pour nos repas.</p>
+          </div>
+        </div>
+
+        <div class="gift-card">
+          <div class="gift-emoji">🥄</div>
+          <div class="gift-body">
+            <strong>Couverts vintage Emmaüs</strong>
+            <p>Un service de couverts chiné avec du cachet.</p>
+          </div>
+        </div>
+
+        <div class="gift-card">
+          <div class="gift-emoji">👨‍🍳</div>
+          <div class="gift-body">
+            <strong>Kenwood Kitchen Gourmet</strong>
+            <p>Pour nos futures aventures culinaires.</p>
+          </div>
+        </div>
+
+        <div class="gift-card">
+          <div class="gift-emoji">🏺</div>
+          <div class="gift-body">
+            <strong>Assiettes de Sarreguemines</strong>
+            <p>Un bel héritage de la faïencerie lorraine.</p>
+          </div>
+        </div>
+
+        <div class="gift-card">
+          <div class="gift-emoji">⛪</div>
+          <div class="gift-body">
+            <strong>Crèche de l'abbaye de Jouarre</strong>
+            <p>Une pièce unique et pleine de sens.</p>
+          </div>
+        </div>
+
+        <div class="gift-card">
+          <div class="gift-emoji">🎲</div>
+          <div class="gift-body">
+            <strong>Jeux de société</strong>
+            <p>Pour nos soirées en famille et entre amis.</p>
+          </div>
+        </div>
+
+        <div class="gift-card">
+          <div class="gift-emoji">🏖️</div>
+          <div class="gift-body">
+            <strong>Voyage en Sardaigne</strong>
+            <p>Notre voyage post-mariage en Sardaigne !</p>
+          </div>
+        </div>
+
+      </div><!-- /gift-grid -->
+
+      <!-- ── Comment participer ── -->
+      <div style="margin-top: 3rem;">
+        <div class="kicker">Participer</div>
+        <h3 class="section-title" style="font-size:1.5rem; margin-bottom:0.6rem;">
+          Comment contribuer ?
+        </h3>
+        <p style="font-size:0.94rem; color:var(--text-light); max-width:600px; margin-bottom:0;">
+          Quatre possibilités s'offrent à vous :
+        </p>
+
+        <div class="payment-grid">
+
+          <div class="pay-option">
+            <div class="pay-icon">💌</div>
+            <strong>Urne au mariage</strong>
+            Une urne sera disponible sur le lieu du mariage
+            pour déposer vos enveloppes le jour J.
+          </div>
+
+          <div class="pay-option">
+            <div class="pay-icon">📱</div>
+            <strong>Wero</strong>
+            Envoyez votre participation via <strong>Wero</strong> au :<br>
+            <span class="mono">07 70 37 93 62</span>
+          </div>
+
+          <div class="pay-option">
+            <div class="pay-icon">🏦</div>
+            <strong>Virement IBAN</strong>
+            Virement sur notre compte commun :<br>
+            <span class="mono">FR76 1744 8000 0200 1049 4617 957</span><br>
+            <span style="font-size:0.8rem; color:var(--text-light);">BIC : SFPEFRP2XXX</span><br>
+            <small style="color:var(--text-light); font-size:0.8rem;">
+              Pensez à indiquer votre nom en référence.
+            </small>
+          </div>
+
+          <div class="pay-option">
+            <div class="pay-icon">💳</div>
+            <strong>PayPal</strong>
+            Envoi via PayPal à l'adresse :<br>
+            <a href="mailto:baptiste.eisele@tutanota.com" class="mono">
+              baptiste.eisele@tutanota.com
+            </a>
+          </div>
+
+        </div><!-- /payment-grid -->
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────
+         MUSIQUE
+    ────────────────────────────────────────── -->
+    <section id="musique" class="section">
+      <div class="kicker">Musique</div>
+      <h2 class="section-title">Playlist &amp; espace improvisation</h2>
+
+      <div class="music-grid">
+
+        <!-- ── Playlist ── -->
+        <div class="music-block">
+          <h3>🎵 Construisons la playlist ensemble !</h3>
+          <p>
+            Quelle chanson va vous faire danser ce soir-là ?
+            Proposez-la ici et nous l'intégrerons à la playlist de la soirée.
+          </p>
+
+          <!--
+            Google Apps Script : remplace GAS_URL dans le <script> en bas de page
+            par l'URL de déploiement de ton script Google Sheets (voir instructions).
+          -->
+          <form id="playlist-form">
+            <input type="hidden" name="form_type" value="playlist">
+
+            <div class="field">
+              <label for="p-prenom">Votre prénom</label>
+              <input type="text" id="p-prenom" name="prenom" placeholder="Marie" required>
+            </div>
+            <div class="field">
+              <label for="p-artiste">Artiste / Groupe</label>
+              <input type="text" id="p-artiste" name="artiste" placeholder="ABBA" required>
+            </div>
+            <div class="field">
+              <label for="p-chanson">Titre de la chanson</label>
+              <input type="text" id="p-chanson" name="chanson" placeholder="Dancing Queen" required>
+            </div>
+
+            <button type="submit" class="btn">Proposer cette chanson 🎶</button>
+            <div class="form-ok" id="playlist-ok">
+              Merci ! Ta chanson rejoindra la playlist 🎉
+            </div>
+          </form>
+
+          <p style="margin-top:1rem; font-size:0.83rem; color:var(--text-light);">
+            Les suggestions sont enregistrées dans notre Google Sheet — on construit
+            la playlist à partir de vos idées !
           </p>
         </div>
-      </div>
+
+        <!-- ── Improvisation ── -->
+        <div class="music-block">
+          <h3>🎸 Espace improvisation</h3>
+          <p>
+            Il y aura un espace musique avec un <strong>piano</strong>, des <strong>micros</strong>
+            et des <strong>grilles d'accords</strong>. L'idée n'est pas de passer la soirée
+            à jouer, mais de partager quelques chansons entre musiciens invités !
+            Si ça vous tente, manifestez-vous 🎹
+          </p>
+
+          <form id="impro-form">
+            <input type="hidden" name="form_type" value="impro">
+
+            <div class="field">
+              <label for="i-prenom">Prénom</label>
+              <input type="text" id="i-prenom" name="prenom" placeholder="Paul" required>
+            </div>
+            <div class="field">
+              <label for="i-nom">Nom</label>
+              <input type="text" id="i-nom" name="nom" placeholder="Dupont" required>
+            </div>
+            <div class="field">
+              <label for="i-instrument">Instrument</label>
+              <select id="i-instrument" name="instrument" required>
+                <option value="" disabled selected>Choisir…</option>
+                <option>Guitare acoustique</option>
+                <option>Guitare électrique</option>
+                <option>Basse</option>
+                <option>Piano / Clavier</option>
+                <option>Batterie / Percussions</option>
+                <option>Violon / Alto</option>
+                <option>Trompette / Cuivres</option>
+                <option>Voix / Chant</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="i-message">Une idée de chanson ? (facultatif)</label>
+              <textarea id="i-message" name="message"
+                placeholder="Je suis partant·e pour jouer Imagine, Hallelujah…"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Je me lance ! 🎵</button>
+            <div class="form-ok" id="impro-ok">
+              Super, on va faire de belles choses ensemble ! 🎶
+            </div>
+          </form>
+        </div>
+
+      </div><!-- /music-grid -->
     </section>
 
-    <!-- Brunch -->
-    <section id="brunch" class="section">
-      <div class="section-header">
-        <div class="section-kicker">Dimanche</div>
-        <h2 class="section-title">Brunch au château</h2>
-      </div>
-
-      <p>
-        Nous serons très heureux de prolonger les festivités avec vous lors d'un brunch
-        au Château du Passage le dimanche à partir de 11h00. Vous pourrez repartir dans
-        l'après-midi en toute tranquillité.
-      </p>
-      <p>
-        Si vous avez des contraintes particulières (régime alimentaire, horaires de départ,
-        etc.), n'hésitez pas à nous le signaler.
-      </p>
-    </section>
   </main>
 
+  <!-- ── FOOTER ── -->
   <footer>
-    <a class="back-to-top" href="#top" aria-label="Revenir en haut de page">
-      <span>↑</span> Haut de page
-    </a>
-    <div>
-      Philomène &amp; Baptiste — 11 juillet 2026
-    </div>
+    <a class="back-top" href="#top">↑ Haut de page</a>
+    <div class="footer-names">Philomène &amp; Baptiste</div>
+    <div>11 juillet 2026 · Saint-André-le-Gaz, Isère</div>
   </footer>
+
+  <script>
+    // ── Remplace cette valeur par l'URL /exec de ton déploiement Apps Script ──
+    const GAS_URL = 'https://script.google.com/macros/s/AKfycbx85cel3W7Of618LME7_exnLgtUrwUhngwI9ief-kmEzA0ZTfx7x9k64EhnCkprRNb1/exec';
+
+    /**
+     * Envoi via GET (pas de problème CORS, fonctionne avec doGet dans Apps Script).
+     * Les données passent en paramètres d'URL.
+     */
+    function bindForm(formId, successId) {
+      const form = document.getElementById(formId);
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = 'Envoi…';
+
+        // Collecte les champs et construit l'URL avec paramètres
+        const params = new URLSearchParams();
+        new FormData(form).forEach((v, k) => params.append(k, v));
+        const url = GAS_URL + '?' + params.toString();
+
+        // GET no-cors : le navigateur ne lit pas la réponse mais les données arrivent
+        fetch(url, { mode: 'no-cors' }).finally(function () {
+          form.reset();
+          form.style.display = 'none';
+          document.getElementById(successId).style.display = 'block';
+        });
+      });
+    }
+
+    bindForm('playlist-form', 'playlist-ok');
+    bindForm('impro-form',    'impro-ok');
+  </script>
+
 </body>
-  </html>
+</html>
