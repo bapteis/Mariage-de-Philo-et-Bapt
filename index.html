@@ -258,7 +258,7 @@
     ──────────────────────────────────────────── */
     .church-img {
       width: 100%;
-      max-height: 380px;
+      max-height: 240px;
       object-fit: cover;
       border-radius: 16px;
       display: block;
@@ -531,6 +531,82 @@
       .section { padding: 1.8rem 1.2rem; }
       .gift-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ────────────────────────────────────────────
+       PHOTO COUPLE (héro)
+    ──────────────────────────────────────────── */
+    .hero-photo {
+      width: 100%;
+      max-width: 400px;
+      margin: 2.2rem auto 0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(200,75,47,0.18);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* ────────────────────────────────────────────
+       IMAGES DANS LES CARTES CADEAUX
+    ──────────────────────────────────────────── */
+    .gift-emoji img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ────────────────────────────────────────────
+       CAROUSEL VACANCES
+    ──────────────────────────────────────────── */
+    .carousel {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--orange-light);
+    }
+
+    .carousel-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.55s ease;
+    }
+
+    .carousel-slide.active { opacity: 1; }
+
+    .carousel-dots {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0;
+      background: rgba(0,0,0,0.18);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.55);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s;
+    }
+
+    .dot.active { background: #fff; }
   </style>
 </head>
 <body>
@@ -555,6 +631,9 @@
       de vous convier à notre mariage. Vous trouverez ici toutes les informations
       pratiques pour ce beau week-end.
     </p>
+    <div class="hero-photo">
+      <img src="philo%20et%20bapt.jpeg" alt="Philomène et Baptiste">
+    </div>
   </header>
 
   <main>
@@ -593,7 +672,7 @@
         <div class="card">
           <div class="tag">🚂 En train (TER)</div>
           <p style="margin-top:0.6rem; font-size:0.92rem;">
-            La <strong>gare de Saint-André-le-Gaz</strong> est à <strong>5 min à pied</strong> de l'église.
+            La <strong>gare de Saint-André-le-Gaz</strong> est à <strong>18 min à pied</strong> de l'église.
           </p>
           <ul class="list-simple" style="padding-left:1rem; margin-top:0.2rem; margin-bottom:0.8rem;">
             <li><strong>Lyon Part-Dieu</strong> : ~1h de TER direct</li>
@@ -755,7 +834,9 @@
       <div class="gift-grid">
 
         <div class="gift-card">
-          <div class="gift-emoji">🛋️</div>
+          <div class="gift-emoji">
+            <img src="canape%20litjpeg.jpeg" alt="Canapé-lit">
+          </div>
           <div class="gift-body">
             <strong>Canapé-lit</strong>
             <p>Pour accueillir nos proches avec confort.</p>
@@ -763,7 +844,9 @@
         </div>
 
         <div class="gift-card">
-          <div class="gift-emoji">🛏️</div>
+          <div class="gift-emoji">
+            <img src="lit%20180.png" alt="Lit 180 cm">
+          </div>
           <div class="gift-body">
             <strong>Lit 180 cm</strong>
             <p>Notre futur grand lit pour bien dormir à deux !</p>
@@ -779,7 +862,9 @@
         </div>
 
         <div class="gift-card">
-          <div class="gift-emoji">🥄</div>
+          <div class="gift-emoji">
+            <img src="vaiselle%20.png" alt="Couverts vintage Emmaüs">
+          </div>
           <div class="gift-body">
             <strong>Couverts vintage Emmaüs</strong>
             <p>Un service de couverts chiné avec du cachet.</p>
@@ -787,7 +872,9 @@
         </div>
 
         <div class="gift-card">
-          <div class="gift-emoji">👨‍🍳</div>
+          <div class="gift-emoji">
+            <img src="robokitchen.png" alt="Kenwood Kitchen Gourmet">
+          </div>
           <div class="gift-body">
             <strong>Kenwood Kitchen Gourmet</strong>
             <p>Pour nos futures aventures culinaires.</p>
@@ -795,7 +882,9 @@
         </div>
 
         <div class="gift-card">
-          <div class="gift-emoji">🏺</div>
+          <div class="gift-emoji">
+            <img src="sgms.png" alt="Assiettes de Sarreguemines">
+          </div>
           <div class="gift-body">
             <strong>Assiettes de Sarreguemines</strong>
             <p>Un bel héritage de la faïencerie lorraine.</p>
@@ -803,7 +892,9 @@
         </div>
 
         <div class="gift-card">
-          <div class="gift-emoji">⛪</div>
+          <div class="gift-emoji">
+            <img src="creche.png" alt="Crèche de l'abbaye de Jouarre">
+          </div>
           <div class="gift-body">
             <strong>Crèche de l'abbaye de Jouarre</strong>
             <p>Une pièce unique et pleine de sens.</p>
@@ -811,18 +902,27 @@
         </div>
 
         <div class="gift-card">
-          <div class="gift-emoji">🎲</div>
+          <div class="gift-emoji">🎭</div>
           <div class="gift-body">
-            <strong>Jeux de société</strong>
-            <p>Pour nos soirées en famille et entre amis.</p>
+            <strong>Place de théâtre / concert</strong>
+            <p>Preneurs de vos recommandations !</p>
           </div>
         </div>
 
         <div class="gift-card">
-          <div class="gift-emoji">🏖️</div>
+          <div class="carousel" id="vacances-carousel">
+            <img src="vacances1.png" alt="Voyage de noces" class="carousel-slide active">
+            <img src="vacances2.png" alt="Voyage de noces" class="carousel-slide">
+            <img src="vacances3.png" alt="Voyage de noces" class="carousel-slide">
+            <div class="carousel-dots">
+              <button class="dot active" onclick="carouselGoTo('vacances-carousel', 0)" aria-label="Image 1"></button>
+              <button class="dot" onclick="carouselGoTo('vacances-carousel', 1)" aria-label="Image 2"></button>
+              <button class="dot" onclick="carouselGoTo('vacances-carousel', 2)" aria-label="Image 3"></button>
+            </div>
+          </div>
           <div class="gift-body">
-            <strong>Voyage en Sardaigne</strong>
-            <p>Notre voyage post-mariage en Sardaigne !</p>
+            <strong>Voyage de noces</strong>
+            <p>Notre voyage post-mariage !</p>
           </div>
         </div>
 
@@ -834,8 +934,9 @@
         <h3 class="section-title" style="font-size:1.5rem; margin-bottom:0.6rem;">
           Comment contribuer ?
         </h3>
-        <p style="font-size:0.94rem; color:var(--text-light); max-width:600px; margin-bottom:0;">
-          Quatre possibilités s'offrent à vous :
+        <p style="font-size:0.94rem; color:var(--text-light); max-width:600px; margin-bottom:0.8rem;">
+          Quatre possibilités s'offrent à vous. Indiquez-nous, si vous le souhaitez,
+          le cadeau sur lequel vous participez afin que l'on puisse vous remercier.
         </p>
 
         <div class="payment-grid">
@@ -850,7 +951,8 @@
           <div class="pay-option">
             <div class="pay-icon">📱</div>
             <strong>Wero</strong>
-            Envoyez votre participation via <strong>Wero</strong> au :<br>
+            Envoyez votre participation via <strong>Wero</strong>
+            (compte de Philomène) au :<br>
             <span class="mono">07 70 37 93 62</span>
           </div>
 
@@ -1045,6 +1147,30 @@
 
     bindForm('playlist-form', 'playlist-ok');
     bindForm('impro-form',    'impro-ok');
+
+    // ── CAROUSEL ──
+    function carouselGoTo(id, idx) {
+      var c = document.getElementById(id);
+      if (!c) return;
+      var slides = c.querySelectorAll('.carousel-slide');
+      var dots   = c.querySelectorAll('.dot');
+      slides.forEach(function(s, i) { s.classList.toggle('active', i === idx); });
+      dots.forEach(function(d, i)   { d.classList.toggle('active', i === idx); });
+      c._current = idx;
+    }
+
+    function carouselInit(id) {
+      var c = document.getElementById(id);
+      if (!c) return;
+      c._current = 0;
+      setInterval(function() {
+        var slides = c.querySelectorAll('.carousel-slide');
+        var next = ((c._current || 0) + 1) % slides.length;
+        carouselGoTo(id, next);
+      }, 3200);
+    }
+
+    carouselInit('vacances-carousel');
   </script>
 
 </body>
