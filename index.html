@@ -138,7 +138,6 @@
 
     .hero-date {
       font-family: 'Day Roman', 'Times New Roman', serif;
-      font-style: italic;
       font-size: clamp(1.2rem, 3vw, 1.7rem);
       color: var(--orange);
       margin-bottom: 0.5rem;
@@ -258,8 +257,7 @@
     ──────────────────────────────────────────── */
     .church-img {
       width: 100%;
-      max-height: 240px;
-      object-fit: cover;
+      height: auto;
       border-radius: 16px;
       display: block;
       margin-bottom: 1.5rem;
@@ -614,6 +612,7 @@
   <!-- ── NAVIGATION ── -->
   <nav class="nav" id="top">
     <a href="#lieu">Lieu &amp; Accès</a>
+    <a href="#covoiturage">Covoiturage</a>
     <a href="#hebergement">Hébergements</a>
     <a href="#cadeaux">Liste de cadeaux</a>
     <a href="#musique">Musique</a>
@@ -621,7 +620,6 @@
 
   <!-- ── HERO ── -->
   <header>
-    <div class="hero-eyebrow">Samedi 11 juillet 2026</div>
     <h1 class="names">Philomène <span class="amp">&amp;</span> Baptiste</h1>
     <div class="hero-divider"></div>
     <div class="hero-date">11 juillet 2026</div>
@@ -642,7 +640,7 @@
          LIEU
     ────────────────────────────────────────── -->
     <section id="lieu" class="section">
-      <div class="kicker">Lieu</div>
+      <div class="kicker">Lieu de la cérémonie religieuse</div>
       <h2 class="section-title">L'église de Saint-André-le-Gaz</h2>
 
       <img src="eglise.jpg" alt="Église de Saint-André-le-Gaz" class="church-img">
@@ -689,14 +687,13 @@
     </section>
 
     <!-- ──────────────────────────────────────────
-         HÉBERGEMENTS
+         COVOITURAGE
     ────────────────────────────────────────── -->
-    <section id="hebergement" class="section">
+    <section id="covoiturage" class="section">
       <div class="kicker">Pratique</div>
-      <h2 class="section-title">Hébergements &amp; covoiturage</h2>
+      <h2 class="section-title">Covoiturage</h2>
 
-      <!-- Covoiturage -->
-      <div class="card" style="margin-bottom:2rem;">
+      <div class="card">
         <div class="tag">🚗 Covoiturage</div>
         <p style="margin-top:0.4rem; margin-bottom:0.8rem; font-size:0.93rem;">
           Vous cherchez une place en voiture ou vous souhaitez en proposer une ?
@@ -708,8 +705,27 @@
           Accéder au covoiturage →
         </a>
       </div>
+    </section>
 
-      <!-- Hébergements -->
+    <!-- ──────────────────────────────────────────
+         HÉBERGEMENTS
+    ────────────────────────────────────────── -->
+    <section id="hebergement" class="section">
+      <div class="kicker">Hébergements</div>
+      <h2 class="section-title">Hébergements à proximité</h2>
+
+      <!-- Camping -->
+      <div class="card" style="margin-bottom:1.8rem;">
+        <div class="tag">⛺ Camping sur place</div>
+        <p style="margin-top:0.5rem; font-size:0.93rem;">
+          Un espace camping est disponible sur le lieu du mariage pour le
+          <strong>samedi soir</strong>. Vous aurez accès aux <strong>sanitaires</strong>,
+          mais pas aux douches. Si cela vous intéresse, merci de nous le signaler
+          à l'avance.
+        </p>
+      </div>
+
+      <!-- Liste hébergements -->
       <p style="font-size:0.94rem; color:var(--text-light); margin-bottom:1.2rem;">
         Voici une sélection d'hébergements proches du lieu du mariage, triés par distance.
       </p>
@@ -854,7 +870,9 @@
         </div>
 
         <div class="gift-card">
-          <div class="gift-emoji">🍽️</div>
+          <div class="gift-emoji">
+            <img src="assiette-artisanale-grande-taille.jpeg" alt="Assiettes en céramique">
+          </div>
           <div class="gift-body">
             <strong>Assiettes en céramique</strong>
             <p>De belles assiettes artisanales pour nos repas.</p>
@@ -902,7 +920,14 @@
         </div>
 
         <div class="gift-card">
-          <div class="gift-emoji">🎭</div>
+          <div class="carousel" id="theatre-carousel">
+            <img src="mp.jpg" alt="Place de spectacle" class="carousel-slide active">
+            <img src="theatre.jpg" alt="Théâtre de l'Opéra" class="carousel-slide">
+            <div class="carousel-dots">
+              <button class="dot active" onclick="carouselGoTo('theatre-carousel', 0)" aria-label="Image 1"></button>
+              <button class="dot" onclick="carouselGoTo('theatre-carousel', 1)" aria-label="Image 2"></button>
+            </div>
+          </div>
           <div class="gift-body">
             <strong>Place de théâtre / concert</strong>
             <p>Preneurs de vos recommandations !</p>
@@ -1171,6 +1196,7 @@
     }
 
     carouselInit('vacances-carousel');
+    carouselInit('theatre-carousel');
   </script>
 
 </body>
