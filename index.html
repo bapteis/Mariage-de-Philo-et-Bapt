@@ -7,15 +7,20 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
+    /*
+      Day Roman ne couvre pas les caractères accentués français (é, è, â…).
+      On la limite à l'ASCII de base — les accents tombent sur Cormorant Garamond.
+    */
     @font-face {
       font-family: 'Day Roman';
       src: url('day_roman/DAYROM__.ttf') format('truetype');
       font-weight: 400;
       font-style: normal;
       font-display: swap;
+      unicode-range: U+0020-007E;
     }
     @font-face {
       font-family: 'Day Roman';
@@ -23,6 +28,7 @@
       font-weight: 700;
       font-style: normal;
       font-display: swap;
+      unicode-range: U+0020-007E;
     }
   </style>
 
@@ -177,7 +183,7 @@
     }
 
     .section-title {
-      font-family: 'Day Roman', 'Times New Roman', serif;
+      font-family: 'Cormorant Garamond', 'Times New Roman', serif;
       font-size: clamp(1.5rem, 3.5vw, 2.1rem);
       font-weight: 600;
       line-height: 1.2;
@@ -395,7 +401,7 @@
     }
 
     .music-block h3 {
-      font-family: 'Day Roman', 'Times New Roman', serif;
+      font-family: 'Cormorant Garamond', 'Times New Roman', serif;
       font-size: 1.35rem;
       font-weight: 600;
       margin-bottom: 0.6rem;
@@ -501,7 +507,7 @@
     }
 
     .footer-names {
-      font-family: 'Day Roman', 'Times New Roman', serif;
+      font-family: 'Cormorant Garamond', 'Times New Roman', serif;
       font-style: italic;
       font-size: 1.5rem;
       color: var(--orange);
@@ -531,7 +537,6 @@
 
   <!-- ── NAVIGATION ── -->
   <nav class="nav" id="top">
-    <a href="#infos">Le week-end</a>
     <a href="#lieu">Lieu &amp; Accès</a>
     <a href="#hebergement">Hébergements</a>
     <a href="#cadeaux">Liste de cadeaux</a>
@@ -555,55 +560,6 @@
   <main>
 
     <!-- ──────────────────────────────────────────
-         PROGRAMME
-    ────────────────────────────────────────── -->
-    <section id="infos" class="section">
-      <div class="kicker">Programme</div>
-      <h2 class="section-title">Le samedi 11 juillet 2026</h2>
-
-      <div class="two-col">
-        <div>
-          <p style="font-size:0.95rem; margin-bottom:1.2rem;">
-            La cérémonie religieuse sera célébrée par <strong>Loïc Biot</strong>
-            en l'église de Saint-André-le-Gaz. La soirée se poursuit ensuite
-            dans la joie !
-          </p>
-          <ul class="schedule">
-            <li>
-              <div class="time">15h00</div>
-              <div>Début de la cérémonie religieuse à l'église de Saint-André-le-Gaz</div>
-            </li>
-            <li>
-              <div class="time">16h30</div>
-              <div>Petit goûter &amp; rafraîchissements</div>
-            </li>
-            <li>
-              <div class="time">17h30</div>
-              <div>Cocktail</div>
-            </li>
-            <li>
-              <div class="time">19h30</div>
-              <div>Repas &amp; soirée dansante</div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="tag">Bon à savoir</div>
-          <p style="margin-top:0;">
-            La cérémonie débutera à <strong>15h précises</strong>.
-            Pensez à arriver 10 à 15 minutes en avance pour trouver
-            une place confortablement dans l'église.
-          </p>
-          <p style="margin-bottom:0;">
-            Pour toute question logistique, contactez-nous à
-            <a href="mailto:baptiste.eisele@tutanota.com">baptiste.eisele@tutanota.com</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ──────────────────────────────────────────
          LIEU
     ────────────────────────────────────────── -->
     <section id="lieu" class="section">
@@ -615,33 +571,40 @@
       <div class="address-block">
         <strong>📍 Adresse</strong><br>
         9 Pl. de l'Église, 38490 Saint-André-le-Gaz<br>
-        <a href="https://www.google.com/maps/search/9+Place+de+l'Église+38490+Saint-André-le-Gaz"
+        <a href="https://www.openstreetmap.org/search?query=Eglise+Saint-Andre-le-Gaz+38490+France"
            target="_blank" rel="noopener"
            style="font-size:0.88rem; margin-top:0.3rem; display:inline-block;">
-          → Ouvrir dans Google Maps
+          → Ouvrir dans OpenStreetMap
         </a>
       </div>
 
       <div class="two-col">
         <div>
           <p style="margin-top:0; font-size:0.94rem;">
-            L'église se trouve au cœur du village de Saint-André-le-Gaz.
-            Des places de stationnement sont disponibles aux alentours de la place de l'église.
+            L'église se trouve au cœur du village. Des places de stationnement
+            sont disponibles aux alentours de la place de l'église.
+            Pensez à arriver <strong>10 à 15 minutes avant 15h</strong>.
           </p>
-          <ul class="list-simple">
-            <li>Arriver 10 à 15 minutes avant le début de la cérémonie.</li>
-            <li>La cérémonie est célébrée par le Père Loïc Biot.</li>
-          </ul>
+          <p style="font-size:0.94rem;">
+            La cérémonie sera célébrée par le Père <strong>Loïc Biot</strong>.
+          </p>
         </div>
 
         <div class="card">
-          <div class="tag">Accès depuis…</div>
-          <ul class="list-simple" style="padding-left:1rem; margin-top:0.2rem;">
-            <li><strong>Lyon</strong> : ~55 min (A43 dir. Chambéry)</li>
-            <li><strong>Grenoble</strong> : ~50 min (A48 dir. Lyon)</li>
-            <li><strong>Chambéry</strong> : ~35 min (A43 dir. Lyon)</li>
-            <li><strong>Bourg-en-Bresse</strong> : ~45 min</li>
+          <div class="tag">🚂 En train (TER)</div>
+          <p style="margin-top:0.6rem; font-size:0.92rem;">
+            La <strong>gare de Saint-André-le-Gaz</strong> est à <strong>5 min à pied</strong> de l'église.
+          </p>
+          <ul class="list-simple" style="padding-left:1rem; margin-top:0.2rem; margin-bottom:0.8rem;">
+            <li><strong>Lyon Part-Dieu</strong> : ~1h de TER direct</li>
+            <li><strong>Chambéry</strong> : ~30 min de TER direct</li>
+            <li><strong>Grenoble</strong> : ~1h15 (changement à Chambéry)</li>
           </ul>
+          <p style="font-size:0.88rem; margin-bottom:0.4rem;">
+            🚄 Ouverture des billets TGV : <strong>mercredi 11 mars</strong>
+          </p>
+          <a href="https://www.sncf-connect.com" target="_blank" rel="noopener"
+             style="font-size:0.88rem;">→ Réserver sur SNCF Connect</a>
         </div>
       </div>
     </section>
@@ -653,32 +616,126 @@
       <div class="kicker">Pratique</div>
       <h2 class="section-title">Hébergements &amp; covoiturage</h2>
 
-      <div class="two-col">
-        <div>
-          <p style="margin-top:0; font-size:0.94rem;">
-            De nombreux hébergements se trouvent à proximité de Saint-André-le-Gaz.
-            Voici quelques idées pour organiser votre séjour.
-          </p>
-          <ul class="list-simple">
-            <li>Gîtes &amp; chambres d'hôtes à Saint-André-le-Gaz et alentours.</li>
-            <li>Hôtels à Bourgoin-Jallieu (~15 min), La Tour-du-Pin (~10 min).</li>
-            <li>Logements Airbnb dans tout le secteur de l'Isle Crémieu.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="tag">Covoiturage</div>
-          <p style="margin-top:0; font-size:0.92rem;">
-            N'hésitez pas à vous regrouper pour les déplacements !
-            Organisez votre covoiturage entre invités — nous vous partagerons
-            bientôt un groupe de coordination.
-          </p>
-          <p style="margin-bottom:0; font-size:0.92rem;">
-            Pour toute question :
-            <a href="mailto:baptiste.eisele@tutanota.com">baptiste.eisele@tutanota.com</a>
-          </p>
-        </div>
+      <!-- Covoiturage -->
+      <div class="card" style="margin-bottom:2rem;">
+        <div class="tag">🚗 Covoiturage</div>
+        <p style="margin-top:0.4rem; margin-bottom:0.8rem; font-size:0.93rem;">
+          Vous cherchez une place en voiture ou vous souhaitez en proposer une ?
+          Rendez-vous sur notre espace covoiturage :
+        </p>
+        <a href="https://togetzer.com/covoiturage-evenement/42zp1x#"
+           target="_blank" rel="noopener"
+           class="btn" style="display:inline-block; font-size:0.78rem;">
+          Accéder au covoiturage →
+        </a>
       </div>
+
+      <!-- Hébergements -->
+      <p style="font-size:0.94rem; color:var(--text-light); margin-bottom:1.2rem;">
+        Voici une sélection d'hébergements proches du lieu du mariage, triés par distance.
+      </p>
+
+      <style>
+        .heb-table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+        .heb-table th { text-align:left; font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--orange); padding:0.4rem 0.6rem; border-bottom:2px solid rgba(200,75,47,0.15); }
+        .heb-table td { padding:0.55rem 0.6rem; border-bottom:1px solid rgba(200,75,47,0.07); vertical-align:top; }
+        .heb-table tr:last-child td { border-bottom:none; }
+        .heb-table tr:hover td { background:var(--orange-light); }
+        .dist-badge { display:inline-block; padding:0.1rem 0.45rem; border-radius:999px; background:rgba(200,75,47,0.1); color:var(--orange); font-size:0.8rem; white-space:nowrap; }
+        @media (max-width:600px) { .heb-table th:nth-child(2), .heb-table td:nth-child(2) { display:none; } }
+      </style>
+
+      <table class="heb-table">
+        <thead>
+          <tr>
+            <th>Hébergement</th>
+            <th>Commune</th>
+            <th>Trajet</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://www.booking.com/hotel/fr/villa-detente-dauphinoise.fr.html" target="_blank" rel="noopener">Villa Détente Dauphinoise</a></td>
+            <td>Saint-André-le-Gaz</td>
+            <td><span class="dist-badge">4 min</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.serve-de-veyssin.com/" target="_blank" rel="noopener">Serve de Veyssin</a></td>
+            <td>Saint-Didier-de-la-Tour</td>
+            <td><span class="dist-badge">6 min</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://lepasdelane.com" target="_blank" rel="noopener">Le Pas de l'Âne</a></td>
+            <td>Saint-Ondras</td>
+            <td><span class="dist-badge">6 min</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://gitelasauvagere.fr" target="_blank" rel="noopener">Gîte La Sauvagère</a></td>
+            <td>Chélieu</td>
+            <td><span class="dist-badge">7 min</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.grandsgites.com/gite-38-tilleul-puycaillot-5914.htm" target="_blank" rel="noopener">Gîte Tilleul Puycaillot</a></td>
+            <td>Montagnieu</td>
+            <td><span class="dist-badge">8 min</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.grandsgites.com/gite-38-machefer-4559.htm" target="_blank" rel="noopener">Gîte Machefer</a></td>
+            <td>Montagnieu</td>
+            <td><span class="dist-badge">8 min</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://abnb.me/jwnKo25Hayb" target="_blank" rel="noopener">Airbnb (Montagnieu)</a></td>
+            <td>Montagnieu</td>
+            <td><span class="dist-badge">8 min</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.booking.com/hotel/fr/la-provencale-saint-didier-de-la-tour.fr.html" target="_blank" rel="noopener">La Provençale</a></td>
+            <td>Saint-Didier-de-la-Tour</td>
+            <td><span class="dist-badge">9 min</span></td>
+          </tr>
+          <tr>
+            <td><a href="http://www.gitedelamanoniere.com/" target="_blank" rel="noopener">Gîte de la Manonière</a></td>
+            <td>Saint-Didier-de-la-Tour</td>
+            <td><span class="dist-badge">9 min</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://abnb.me/G07D6B4Hayb" target="_blank" rel="noopener">Airbnb (Sainte-Blandine)</a></td>
+            <td>Sainte-Blandine</td>
+            <td><span class="dist-badge">11 min</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://gitelestournesols.fr" target="_blank" rel="noopener">Gîte Les Tournesols</a></td>
+            <td>Les Abrets</td>
+            <td><span class="dist-badge">11 min</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://lespetitesbottes.fr" target="_blank" rel="noopener">Les Petites Bottes</a></td>
+            <td>Les Abrets</td>
+            <td><span class="dist-badge">11 min</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://coin-tranquille.com" target="_blank" rel="noopener">Coin Tranquille</a></td>
+            <td>Les Abrets</td>
+            <td><span class="dist-badge">12 min</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.gites.fr/gites_la-tour-du-pin_15586.html" target="_blank" rel="noopener">Gîtes La Tour-du-Pin</a></td>
+            <td>La Tour-du-Pin</td>
+            <td><span class="dist-badge">14 min</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.gites-de-france-isere.com/liste.html?instance=gites38&amp;critinit=o&amp;insee=38509&amp;ges=resa" target="_blank" rel="noopener">Gîtes de France Isère (La Tour-du-Pin)</a></td>
+            <td>La Tour-du-Pin</td>
+            <td><span class="dist-badge">14 min</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://au-balcon-du-dauphine.business.site/" target="_blank" rel="noopener">Au Balcon du Dauphiné</a></td>
+            <td>La Bâtie-Montgascon</td>
+            <td><span class="dist-badge">11 min</span></td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <!-- ──────────────────────────────────────────
@@ -932,34 +989,57 @@
   </footer>
 
   <script>
-    // ── Remplace cette valeur par l'URL /exec de ton déploiement Apps Script ──
+    /*
+      URL du déploiement Google Apps Script.
+      IMPORTANT : le script doit contenir une fonction doGet(e), pas doPost.
+      Si tu as modifié le script, crée un NOUVEAU déploiement pour que les
+      changements soient pris en compte (Déployer → Gérer → icône crayon → Nouvelle version).
+    */
     const GAS_URL = 'https://script.google.com/macros/s/AKfycbx85cel3W7Of618LME7_exnLgtUrwUhngwI9ief-kmEzA0ZTfx7x9k64EhnCkprRNb1/exec';
 
-    /**
-     * Envoi via GET (pas de problème CORS, fonctionne avec doGet dans Apps Script).
-     * Les données passent en paramètres d'URL.
-     */
     function bindForm(formId, successId) {
       const form = document.getElementById(formId);
       if (!form) return;
 
+      // Crée un élément d'erreur sous le bouton
+      var errEl = document.createElement('p');
+      errEl.style.cssText = 'display:none;color:#b91c1c;font-size:0.85rem;margin-top:0.6rem;';
+      errEl.textContent = 'Oups, une erreur est survenue. Envoie ta suggestion à baptiste.eisele@tutanota.com 🙏';
+      form.appendChild(errEl);
+
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        const btn = form.querySelector('button[type="submit"]');
+        var btn = form.querySelector('button[type="submit"]');
         btn.disabled = true;
         btn.textContent = 'Envoi…';
+        errEl.style.display = 'none';
 
-        // Collecte les champs et construit l'URL avec paramètres
-        const params = new URLSearchParams();
-        new FormData(form).forEach((v, k) => params.append(k, v));
-        const url = GAS_URL + '?' + params.toString();
+        var params = new URLSearchParams();
+        new FormData(form).forEach(function(v, k) { params.append(k, v); });
+        var url = GAS_URL + '?' + params.toString();
 
-        // GET no-cors : le navigateur ne lit pas la réponse mais les données arrivent
-        fetch(url, { mode: 'no-cors' }).finally(function () {
-          form.reset();
-          form.style.display = 'none';
-          document.getElementById(successId).style.display = 'block';
-        });
+        /*
+          On tente d'abord sans no-cors pour lire la réponse.
+          Si GAS retourne bien "ok", on affiche le succès.
+          En cas d'erreur réseau/CORS, on bascule en no-cors (fallback).
+        */
+        fetch(url)
+          .then(function(r) {
+            return r.ok ? r.text() : Promise.reject('http-' + r.status);
+          })
+          .then(function() {
+            form.reset();
+            form.style.display = 'none';
+            document.getElementById(successId).style.display = 'block';
+          })
+          .catch(function() {
+            // Fallback no-cors : données envoyées mais réponse illisible (CORS)
+            fetch(url, { mode: 'no-cors' }).finally(function() {
+              form.reset();
+              form.style.display = 'none';
+              document.getElementById(successId).style.display = 'block';
+            });
+          });
       });
     }
 
